@@ -6,7 +6,7 @@ Pay your invoices with [Testy](https://github.com/sdl/Testy) and [Cucumber](http
 
 This invoices are tested/ready for :
 
-- [x] Cards issued @[Banca Transilvania](https://www.bancatransilvania.ro/) with [3D Secure](https://www.bancatransilvania.ro/plati-cu-cardul-pe-internet/') enabled
+- [x] Cards issued @[Banca Transilvania](https://www.bancatransilvania.ro/) with [3D Secure](https://www.bancatransilvania.ro/plati-cu-cardul-pe-internet/) enabled
 
 ## Ready Scenarios
 
