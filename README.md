@@ -14,6 +14,18 @@ This invoices are tested/ready for :
 - [x] Pay [UPC](https://my.upc.ro/) invoice
 - [x] Pay [DIGI](https://digicare.rcs-rds.ro/) invoice
 
+## First Setup
+
+- Rename:
+
+    pay-invoices\src\test\resources\feature\invoice\all-invoices-demo.feature -> all-invoices.feature
+    
+- Select Scenarios:
+
+    make sure to leave only necessary scenarios
+    
+- Edit your credentials (user/pass/card details)
+
 ## Running the Tests:
 
     mvn clean test

@@ -4,3 +4,12 @@ target/
 
 /pay-invoices.log
 
+
+## ============== I M P O R T A N T ==============
+## Make sure personal info are not commited on git
+## = = = = = = = = = = = = = = = = = = = = = = = =
+
+src/test/resources/feature/invoice/all-invoices.feature
+
+## ===============================================
+
