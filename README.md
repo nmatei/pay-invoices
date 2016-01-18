@@ -18,7 +18,7 @@ This invoices are tested/ready for :
 
 - Rename:
 
-    [pay-invoices\src\test\resources\feature\invoice\all-invoices-demo.feature](pay-invoices\src\test\resources\feature\invoice\all-invoices-demo.feature) -> all-invoices.feature
+    [pay-invoices\src\test\resources\feature\invoice\all-invoices-demo.feature](./pay-invoices/src/test/resources/feature/invoice/all-invoices-demo.feature) -> all-invoices.feature
     
 - Select Scenarios:
 
