@@ -16,7 +16,7 @@ This invoices are tested/ready for :
 
 ## First Setup
 
-- Rename:
+- Copy:
 
     [src\test\resources\feature\invoice\all-invoices-demo.feature](./src/test/resources/feature/invoice/all-invoices-demo.feature) -> all-invoices.feature
     
@@ -28,5 +28,5 @@ This invoices are tested/ready for :
 
 ## Running the Tests:
 
-    mvn clean test
+    mvn clean test -Dtest=*Runner
     
