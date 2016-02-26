@@ -5,14 +5,13 @@ import cucumber.api.java.en.Then;
 import org.fasttrackit.util.TestBase;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ro.btrl.Secure3DPassword;
 
 public class SecureGwSteps extends TestBase {
 
     private CardView cardView = new CardView();
 
     @Then("^I enter my SecureGW card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\"$")
-    public void I_enter_my_PayU_card_details_that_expires_on_and_owned_by(String number, String cvv, String month, String year, String owner) throws Throwable {
+    public void enterCardDetails(String number, String cvv, String month, String year, String owner) throws Throwable {
         cardView.setValues(number, cvv, month, year, owner);
     }
 

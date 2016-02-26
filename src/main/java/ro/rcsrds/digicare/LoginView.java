@@ -1,6 +1,5 @@
 package ro.rcsrds.digicare;
 
-import com.sdl.selenium.WebLocatorUtils;
 import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.Button;
 import com.sdl.selenium.web.form.TextField;
@@ -21,9 +20,5 @@ public class LoginView extends WebLocator {
         userNameField.setValue(user);
         passwordField.setValue(pass);
         loginButton.assertClick();
-    }
-
-    public static void main(String[] args) {
-        WebLocatorUtils.getXPathScript(new LoginView());
     }
 }

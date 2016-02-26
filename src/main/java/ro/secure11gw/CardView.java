@@ -1,6 +1,5 @@
 package ro.secure11gw;
 
-import com.sdl.selenium.WebLocatorUtils;
 import com.sdl.selenium.utils.config.WebDriverConfig;
 import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
@@ -40,10 +39,5 @@ public class CardView extends WebLocator {
 
     public void successfullyPaid() {
         successMessageElement.assertReady();
-    }
-
-    public static void main(String[] args) {
-        CardView view = new CardView();
-        WebLocatorUtils.getXPathScript(view);
     }
 }

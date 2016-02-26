@@ -1,6 +1,5 @@
 package ro.rcsrds.digicare;
 
-import com.sdl.selenium.WebLocatorUtils;
 import com.sdl.selenium.conditions.Condition;
 import com.sdl.selenium.conditions.ConditionManager;
 import com.sdl.selenium.conditions.ElementRemovedSuccessCondition;
@@ -8,9 +7,6 @@ import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.Button;
 import com.sdl.selenium.web.link.WebLink;
-import com.sdl.selenium.web.utils.Utils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class InvoiceListView extends WebLocator {
     private WebLocator invoiceMenuItem = new WebLocator().setText("Facturi");

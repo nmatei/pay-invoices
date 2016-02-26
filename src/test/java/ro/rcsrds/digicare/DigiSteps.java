@@ -12,23 +12,23 @@ public class DigiSteps extends TestBase {
     private CardView cardView = new CardView();
 
     @Then("^I login on DIGI using \"([^\"]*)\"/\"([^\"]*)\"$")
-    public void iLoginOnDIGIUsing(String user, String pass) {
+    public void login(String user, String pass) {
         loginView.login(user, pass);
         Utils.sleep(2);
     }
 
     @When("^I open invoice list on DIGI$")
-    public void iOpenInvoiceListOnDIGI() throws Throwable {
+    public void openInvoiceList() throws Throwable {
         invoicesView.selectAll();
     }
 
     @Then("^I select to pay all invoices on DIGI$")
-    public void iSelectToPayAllInvoicesOnDIGI() {
+    public void selectToPayAllInvoices() {
         invoicesView.payAll();
     }
 
     @Then("^I enter my EuPlatesc card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\"$")
-    public void I_enter_my_PayU_card_details_that_expires_on_and_owned_by(String number, String cvv, String month, String year, String owner) throws Throwable {
+    public void enterCardDetails(String number, String cvv, String month, String year, String owner) throws Throwable {
         cardView.setValues(number, cvv, month, year, owner);
     }
 }

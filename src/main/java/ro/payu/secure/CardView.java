@@ -1,6 +1,5 @@
 package ro.payu.secure;
 
-import com.sdl.selenium.WebLocatorUtils;
 import com.sdl.selenium.utils.config.WebDriverConfig;
 import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
@@ -38,12 +37,5 @@ public class CardView extends WebLocator {
 
     public void successfullyPaid() {
         successMessageElement.assertReady();
-    }
-
-    public static void main(String[] args) {
-        CardView orderView = new CardView();
-//        WebLocatorUtils.getXPathScript(orderView);
-
-        WebLocatorUtils.getXPathScript(orderView.successMessageElement);
     }
 }
