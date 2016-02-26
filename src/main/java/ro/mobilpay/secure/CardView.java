@@ -1,7 +1,8 @@
 package ro.mobilpay.secure;
 
+import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
-import com.sdl.selenium.web.button.InputButton;
+import com.sdl.selenium.web.button.Button;
 import com.sdl.selenium.web.form.ComboBox;
 import com.sdl.selenium.web.form.TextField;
 
@@ -12,7 +13,7 @@ public class CardView extends WebLocator {
     private ComboBox yearField = new ComboBox().setId("paymentExpYear");
     private TextField cvv2Field = new TextField().setPlaceholder("CVV2/CVC");
 
-    private InputButton payButton = new InputButton().setText("Platesc in siguranta");
+    private Button payButton = new Button().setText("Platesc in siguranta", SearchType.TRIM);
 
     public void setValues(String number, String cvv, String month, String year, String owner) {
         numberField.setValue(number);

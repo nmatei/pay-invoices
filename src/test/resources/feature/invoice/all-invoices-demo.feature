@@ -48,3 +48,16 @@ Feature: As a Customer I pay all my invoices
       #Comanda dvs. a fost finalizată cu succes.
       #Mulţumim!!
     And I click on "Înapoi la site" button
+
+  Scenario: Pay Electrica invoice
+    Given I open url "https://oficiulvirtual.electricafurnizare.ro/"
+    And I login on Electrica using "user"/"******"
+    And I open invoice list on Electrica for place "1010111 - CLUJ, CLUJ-NAPOCA, Str. Testelor, nr.1, Bl.B1, Sc.1, Et.2, Ap.3, 12345"
+    When I select to pay all invoices on Electrica
+    And I enter my card details "4444333322221111"/"123" that expires on "01"/"2017" and owned by "PRENUME NUME" on MobilPay
+    Then I proceed to MobilPay payment
+    And I type "3Dpassword" into BT 3DSecure password
+    And I finalize payment on BT 3DSecure
+    And I should see an element containing text "Plata online este in curs de procesare. Va multumim!"
+    And I click on link with text "OK"
+    #And I click on link with text "Log-out"
