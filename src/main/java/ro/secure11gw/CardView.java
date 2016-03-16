@@ -6,6 +6,7 @@ import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.InputButton;
 import com.sdl.selenium.web.form.ComboBox;
 import com.sdl.selenium.web.form.TextField;
+import org.fasttrackit.util.BankCardDetails;
 
 public class CardView extends WebLocator {
     private TextField numberField = new TextField().setLabel("Numarul cardului", SearchType.TRIM).setLabelTag("div");
@@ -24,6 +25,11 @@ public class CardView extends WebLocator {
         monthField.select(month);
         yearField.select(year);
         ownerField.setValue(owner);
+    }
+
+    public void setValues(BankCardDetails card) {
+        String month = card.getMonth();
+        setValues(card.getNumber(), card.getCvv(), month, card.getYear(), card.getOwner());
     }
 
     public void pay() {

@@ -13,7 +13,7 @@ This invoices are tested/ready for :
 - [x] Pay [e-on](https://myline-eon.ro/) invoice
 - [x] Pay [UPC](https://my.upc.ro/) invoice
 - [x] Pay [DIGI](https://digicare.rcs-rds.ro/) invoice
-- [ ] Pay [Electrica](https://oficiulvirtual.electricafurnizare.ro/) invoice
+- [x] Pay [Electrica](https://oficiulvirtual.electricafurnizare.ro/) invoice
 
 ## First Setup
 
@@ -31,3 +31,6 @@ This invoices are tested/ready for :
 
     mvn clean test -Dtest=*Runner
     
+## TODO
+
+- log invoice amount

@@ -3,6 +3,7 @@ package ro.rcsrds.digicare;
 import com.sdl.selenium.web.utils.Utils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.fasttrackit.util.BankCardDetails;
 import org.fasttrackit.util.TestBase;
 import ro.euplatesc.secure.CardView;
 
@@ -18,7 +19,7 @@ public class DigiSteps extends TestBase {
     }
 
     @When("^I open invoice list on DIGI$")
-    public void openInvoiceList() throws Throwable {
+    public void openInvoiceList() {
         invoicesView.selectAll();
     }
 
@@ -28,7 +29,13 @@ public class DigiSteps extends TestBase {
     }
 
     @Then("^I enter my EuPlatesc card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\"$")
-    public void enterCardDetails(String number, String cvv, String month, String year, String owner) throws Throwable {
+    public void enterCardDetails(String number, String cvv, String month, String year, String owner) {
         cardView.setValues(number, cvv, month, year, owner);
+    }
+
+    @Then("^I enter my EuPlatesc card details$")
+    public void enterCardDetails() {
+        BankCardDetails card = new BankCardDetails();
+        cardView.setValues(card);
     }
 }

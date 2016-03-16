@@ -6,6 +6,9 @@ import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.InputButton;
 import com.sdl.selenium.web.form.ComboBox;
 import com.sdl.selenium.web.form.TextField;
+import org.fasttrackit.util.BankCardDetails;
+
+import java.util.Locale;
 
 public class CardView extends WebLocator {
     private final String LABEL_POSITION = "/parent::*/following-sibling::td[1]//";
@@ -26,6 +29,12 @@ public class CardView extends WebLocator {
         monthField.select(month);
         yearField.select(year);
         ownerField.setValue(owner);
+    }
+
+    public void setValues(BankCardDetails card) {
+        // month is in format "05 (Mai)"
+        String month = card.getMonth() + " (" + card.getMonthName(new Locale("ro")) + ")";
+        setValues(card.getNumber(), card.getCvv(), month, card.getYear(), card.getOwner());
     }
 
     public void switchToPopup() {

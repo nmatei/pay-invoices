@@ -22,7 +22,7 @@ public class FlowUtilitySteps extends TestBase {
     }
 
     @When("^I open url \"([^\"]*)\"$")
-    public void I_open_LC_path(String url) {
+    public void I_open_path(String url) {
         AppUtils.openUrl(url);
     }
 

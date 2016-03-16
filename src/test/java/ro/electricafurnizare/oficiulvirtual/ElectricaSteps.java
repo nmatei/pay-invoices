@@ -3,6 +3,7 @@ package ro.electricafurnizare.oficiulvirtual;
 import com.sdl.selenium.web.utils.Utils;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.fasttrackit.util.BankCardDetails;
 import org.fasttrackit.util.TestBase;
 import ro.mobilpay.secure.CardView;
 
@@ -18,7 +19,7 @@ public class ElectricaSteps extends TestBase {
     }
 
     @When("^I open invoice list on Electrica for place \"([^\"]*)\"$")
-    public void openInvoiceList(String place) throws Throwable {
+    public void openInvoiceList(String place) {
         invoicesView.selectAll(place);
     }
 
@@ -28,12 +29,18 @@ public class ElectricaSteps extends TestBase {
     }
 
     @Then("^I enter my card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\" on MobilPay$")
-    public void enterCardDetails(String number, String cvv, String month, String year, String owner) throws Throwable {
+    public void enterCardDetails(String number, String cvv, String month, String year, String owner) {
         cardView.setValues(number, cvv, month, year, owner);
     }
 
+    @Then("^I enter my card details on MobilPay$")
+    public void enterCardDetails() {
+        BankCardDetails card = new BankCardDetails();
+        cardView.setValues(card);
+    }
+
     @Then("^I proceed to MobilPay payment$")
-    public void iProceedToSecureGWPayment() throws Throwable {
+    public void iProceedToSecureGWPayment() {
         cardView.pay();
 
 //        WebDriverWait wait = new WebDriverWait(WebDriverConfig.getDriver(), 5);

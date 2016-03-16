@@ -2,6 +2,7 @@ package ro.payu.secure;
 
 import com.sdl.selenium.utils.config.WebDriverConfig;
 import cucumber.api.java.en.Then;
+import org.fasttrackit.util.BankCardDetails;
 import org.fasttrackit.util.TestBase;
 import ro.btrl.Secure3DPassword;
 
@@ -10,18 +11,31 @@ public class PayUSteps extends TestBase {
     private Secure3DPassword secure3DPassword = new Secure3DPassword();
 
     @Then("^I enter my PayU card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\"$")
-    public void enterCardDetails(String number, String cvv, String month, String year, String owner) throws Throwable {
+    public void enterCardDetails(String number, String cvv, String month, String year, String owner) {
         cardView.setValues(number, cvv, month, year, owner);
     }
 
+    @Then("^I enter my PayU card details$")
+    public void enterCardDetails() {
+        BankCardDetails card = new BankCardDetails();
+        cardView.setValues(card);
+    }
+
     @Then("^I type \"([^\"]*)\" into PayU password$")
-    public void I_type_into_PayU_password(String password) throws Throwable {
+    public void I_type_into_PayU_password(String password) {
         cardView.switchToPopup();
         secure3DPassword.setPassword(password);
     }
 
+    @Then("^I enter into PayU password$")
+    public void enterPayUPassword() throws Throwable {
+        cardView.switchToPopup();
+        BankCardDetails card = new BankCardDetails();
+        secure3DPassword.setPassword(card.getPassword());
+    }
+
     @Then("^I finalize payment on PayU site$")
-    public void I_finalize_payment_on_PayU_site() throws Throwable {
+    public void I_finalize_payment_on_PayU_site() {
         secure3DPassword.clickContinue();
 
         WebDriverConfig.getDriver().switchTo().defaultContent();
