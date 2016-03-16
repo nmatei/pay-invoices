@@ -22,13 +22,13 @@ public class PayUSteps extends TestBase {
     }
 
     @Then("^I type \"([^\"]*)\" into PayU password$")
-    public void I_type_into_PayU_password(String password) {
+    public void enterPassword(String password) {
         cardView.switchToPopup();
         secure3DPassword.setPassword(password);
     }
 
-    @Then("^I enter into PayU password$")
-    public void enterPayUPassword() throws Throwable {
+    @Then("^I enter PayU password$")
+    public void enterPassword() throws Throwable {
         cardView.switchToPopup();
         BankCardDetails card = new BankCardDetails();
         secure3DPassword.setPassword(card.getPassword());

@@ -19,18 +19,20 @@ This invoices are tested/ready for :
 
 - Copy:
 
-    [src\test\resources\feature\invoice\all-invoices-demo.feature](./src/test/resources/feature/invoice/all-invoices-demo.feature) -> all-invoices.feature
+    - [x] [src\test\resources\feature\invoice\all-invoices-demo.feature](./src/test/resources/feature/invoice/all-invoices-demo.feature) -> all-invoices.feature
+    - [x] [src\test\resources\bank-card-demo.properties](./src/test/resources/bank-card-demo.properties) -> bank-card.properties
     
 - Select Scenarios:
 
     make sure to leave only necessary scenarios
     
-- Edit your credentials (user/pass/card details)
+- Edit your credentials (user/pass/card details) into this 2 files
 
 ## Running the Tests:
 
     mvn clean test -Dtest=*Runner
     
-## TODO
+## Things to improve (TODOs)
 
 - log invoice amount
+- automate first setup

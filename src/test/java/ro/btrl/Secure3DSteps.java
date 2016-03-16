@@ -12,12 +12,12 @@ public class Secure3DSteps extends TestBase {
     private Secure3DPassword secure3DPassword = new Secure3DPassword();
 
     @Then("^I type \"([^\"]*)\" into BT 3DSecure password$")
-    public void enterPayUPassword(String password) throws Throwable {
+    public void enterPassword(String password) throws Throwable {
         secure3DPassword.setPassword(password);
     }
 
     @Then("^I enter BT 3DSecure password$")
-    public void enterPayUPassword() throws Throwable {
+    public void enterPassword() throws Throwable {
         BankCardDetails card = new BankCardDetails();
         secure3DPassword.setPassword(card.getPassword());
     }
