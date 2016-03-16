@@ -34,5 +34,6 @@ This invoices are tested/ready for :
     
 ## Things to improve (TODOs)
 
-- log invoice amount
-- automate first setup
+- [ ] log invoice amount
+- [ ] automate first setup
+- [ ] encrypt card details values
