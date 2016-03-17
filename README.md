@@ -1,6 +1,6 @@
-# Invoices payment with Selenium WebDriver and Cucumber
+# Invoices payment with Testy and Cucumber
 
-Pay your invoices with [Testy](https://github.com/sdl/Testy) and [Cucumber](https://cucumber.io/)
+Pay your invoices with [Testy](https://github.com/sdl/Testy) ([`Selenium WebDriver`](http://www.seleniumhq.org/projects/webdriver/) test framework for web applications.) and [Cucumber](https://cucumber.io/)
 
 ## Requirements
 
