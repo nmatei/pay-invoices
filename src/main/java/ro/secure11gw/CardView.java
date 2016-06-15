@@ -33,7 +33,7 @@ public class CardView extends WebLocator {
     }
 
     public void pay() {
-        payButton.assertClick();
+        payButton.click();
     }
 
     public void switchToPopup() {

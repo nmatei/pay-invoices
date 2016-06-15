@@ -14,6 +14,6 @@ public class Secure3DPassword {
     }
 
     public void clickContinue() {
-        continueButton.assertClick();
+        continueButton.click();
     }
 }

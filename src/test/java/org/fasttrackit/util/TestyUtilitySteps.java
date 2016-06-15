@@ -19,31 +19,31 @@ public class TestyUtilitySteps extends TestBase {
     @When("^I click on link with text \"([^\"]*)\"$")
     public void I_click_on_link_with_text(String text) {
         WebLink link = new WebLink().setText(text);
-        link.assertClick();
+        link.click();
     }
 
     @When("^I click on link containing text \"([^\"]*)\"$")
     public void iClickOnLinkContainingText(String text) throws Throwable {
         WebLink link = new WebLink().setText(text, SearchType.TRIM, SearchType.CHILD_NODE);
-        link.assertClick();
+        link.click();
     }
 
     @When("^I click on element with text \"([^\"]*)\"$")
     public void I_click_on_element_with_text(String text) throws Throwable {
         WebLocator element = new WebLocator().setText(text);
-        element.assertClick();
+        element.click();
     }
     
     @When("^I click on input button with text \"([^\"]*)\"$")
     public void I_click_on_input_button_with_text(String text) {
         InputButton button = new InputButton().setText(text);
-        button.assertClick();
+        button.click();
     }
 
     @When("^I click on \"([^\"]*)\" button$")
     public void I_click_button(String text) {
         Button button = new Button().setText(text, SearchType.EQUALS, SearchType.TRIM, SearchType.DEEP_CHILD_NODE_OR_SELF);
-        button.assertClick();
+        button.click();
     }
 
     @Then("^I should see an element with text \"([^\"]*)\"$")

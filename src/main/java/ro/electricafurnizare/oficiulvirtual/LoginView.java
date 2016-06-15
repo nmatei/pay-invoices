@@ -18,6 +18,6 @@ public class LoginView extends WebLocator {
     public void login(String user, String pass) {
         userNameField.setValue(user);
         passwordField.setValue(pass);
-        loginButton.assertClick();
+        loginButton.click();
     }
 }

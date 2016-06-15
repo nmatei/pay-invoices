@@ -13,31 +13,35 @@ public class InvoiceListView extends WebLocator {
     private WebLink invoicesListItem = new WebLink().setText("Listă Facturi", SearchType.TRIM, SearchType.CHILD_NODE);
     private Button selectAllButton = new Button().setText("Selectaţi tot").setVisibility(true);
     private Button payAllButton = new Button().setText("Plătiţi factura", SearchType.STARTS_WITH);
-    private WebLink seeInvoices = new WebLink().setAttribute("data-request", "/invoices-list-orig");
+    private WebLink seeInvoices = new WebLink().setAttribute("data-request", "/invoices-list");
 
     private WebLocator promoPopup = new WebLocator().setClasses("popup");
     private WebLocator closePromo = new WebLocator(promoPopup).setClasses("close").setRenderMillis(500);
 
+    private WebLocator promoPopup2 = new WebLocator().setClasses("ui-dialog", "ui-front");
+    private WebLocator closePromo2 = new WebLocator(promoPopup2).setClasses("ui-dialog-titlebar-close");
+
     public void selectAll() {
+        closePromo2.doClick();
         invoiceMenuItem.mouseOver();
-        invoicesListItem.assertClick();
+        invoicesListItem.click();
 
         WebLocator waiting = new WebLocator().setText("Se încarcă...");
         ConditionManager conditionManager = new ConditionManager().add(new ElementRemovedSuccessCondition(waiting));
         Condition condition = conditionManager.execute();
 
-        closePromo.click();
+        closePromo.doClick();
 
         if (seeInvoices.isElementPresent()) {
-            seeInvoices.assertClick();
+            seeInvoices.click();
         }
 
-        closePromo.click();
+        closePromo.doClick();
 
-        selectAllButton.assertClick();
+        selectAllButton.click();
     }
 
     public void payAll() {
-        payAllButton.assertClick();
+        payAllButton.click();
     }
 }

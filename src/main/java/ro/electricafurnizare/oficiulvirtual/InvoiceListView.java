@@ -17,14 +17,14 @@ public class InvoiceListView extends WebLocator {
 
     public void selectAll(String place) {
         invoiceMenuItem.mouseOver();
-        invoiceMenuItem.assertClick();
-        payOnline.assertClick();
+        invoiceMenuItem.click();
+        payOnline.click();
         placeCombo.select(place);
-        selectAllButton.assertClick();
+        selectAllButton.click();
     }
 
     public void payAll() {
-        payAllButton.assertClick();
-        confirmButton.assertClick();
+        payAllButton.click();
+        confirmButton.click();
     }
 }
