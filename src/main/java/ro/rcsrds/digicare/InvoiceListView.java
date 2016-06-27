@@ -7,6 +7,8 @@ import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.Button;
 import com.sdl.selenium.web.link.WebLink;
+import com.sdl.selenium.web.utils.Utils;
+import org.openqa.selenium.InvalidElementStateException;
 
 public class InvoiceListView extends WebLocator {
     private WebLocator invoiceMenuItem = new WebLocator().setText("Facturi");
@@ -22,7 +24,13 @@ public class InvoiceListView extends WebLocator {
     private WebLocator closePromo2 = new WebLocator(promoPopup2).setClasses("ui-dialog-titlebar-close");
 
     public void selectAll() {
-        closePromo2.doClick();
+        try {
+            closePromo2.doClick();
+            // TODO try temporary until retry is implemented in click
+        } catch (InvalidElementStateException e) {
+            Utils.sleep(500);
+            closePromo2.doClick();
+        }
         invoiceMenuItem.mouseOver();
         invoicesListItem.click();
 
