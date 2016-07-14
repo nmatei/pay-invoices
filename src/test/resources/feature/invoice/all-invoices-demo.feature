@@ -19,15 +19,13 @@ Feature: As a Customer I pay all my invoices
 
 
   Scenario: Pay UPC invoice
-    Given I open url "https://my.upc.ro/"
-    And I type "user@gmail.com" into "E-mail:" field
-    And I type "******" into "Parola My UPC:" field
-    When I click on "Login" button
-    Then I should see an element containing text "PRENUME NUME"
-    When I click on link with text "Plata facturi"
-    And I click on "Continua" button
+    And I login on UPC using "user@gmail.com"/"******"
+    When I click on link with text "Plăteşte acum"
+    When I click on link with text "Plăteşte acum"
+    And I click on "Continuă" button
+    And I click on element with text "Fă o plată simplă cu cardul"
+    And I click on "Continuă" button
     And I switch browser to last tab
-    And I click on input button with text "Pasul următor"
     Then I enter my PayU card details
     And I click on input button with text "Plateste"
     And I enter PayU password
