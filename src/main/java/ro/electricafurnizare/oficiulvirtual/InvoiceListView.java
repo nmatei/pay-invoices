@@ -6,6 +6,7 @@ import com.sdl.selenium.web.button.InputButton;
 import com.sdl.selenium.web.form.CheckBox;
 import com.sdl.selenium.web.form.ComboBox;
 import com.sdl.selenium.web.link.WebLink;
+import com.sdl.selenium.web.utils.Utils;
 
 public class InvoiceListView extends WebLocator {
     private WebLink invoiceMenuItem = new WebLink().setText("Facturi / Plati", SearchType.TRIM, SearchType.CHILD_NODE);
@@ -16,6 +17,8 @@ public class InvoiceListView extends WebLocator {
     private InputButton confirmButton = new InputButton().setText("Confirmati plata online");
 
     public void selectAll(String place) {
+        // Other element would receive the click: <div class="ov-navcontainer-loading-overlayer">...</div>
+        Utils.sleep(1000);
         invoiceMenuItem.mouseOver();
         invoiceMenuItem.click();
         payOnline.click();
