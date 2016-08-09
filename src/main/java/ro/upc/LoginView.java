@@ -1,9 +1,7 @@
 package ro.upc;
 
-import com.sdl.selenium.web.SearchType;
 import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.Button;
-import com.sdl.selenium.web.button.InputButton;
 import com.sdl.selenium.web.form.TextField;
 
 public class LoginView extends WebLocator {

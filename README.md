@@ -37,3 +37,4 @@ This invoices are tested/ready for :
 - [ ] log invoice amount
 - [ ] automate first setup
 - [ ] encrypt card details values
+- [ ] extract user/pass in properties + encrypt

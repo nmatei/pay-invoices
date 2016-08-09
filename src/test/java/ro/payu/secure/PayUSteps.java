@@ -8,6 +8,7 @@ import ro.btrl.Secure3DPassword;
 
 public class PayUSteps extends TestBase {
     private CardView cardView = new CardView();
+    private CardViewV2 cardViewV2 = new CardViewV2();
     private Secure3DPassword secure3DPassword = new Secure3DPassword();
 
     @Then("^I enter my PayU card details \"([^\"]*)\"/\"([^\"]*)\" that expires on \"([^\"]*)\"/\"([^\"]*)\" and owned by \"([^\"]*)\"$")
@@ -19,6 +20,12 @@ public class PayUSteps extends TestBase {
     public void enterCardDetails() {
         BankCardDetails card = new BankCardDetails();
         cardView.setValues(card);
+    }
+
+    @Then("^I enter my PayU v2 card details$")
+    public void enterCardDetailsV2() {
+        BankCardDetails card = new BankCardDetails();
+        cardViewV2.setValues(card);
     }
 
     @Then("^I type \"([^\"]*)\" into PayU password$")
