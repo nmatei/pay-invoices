@@ -44,9 +44,10 @@ public class CardView extends WebLocator {
             payButton.click();
         } catch (UnhandledAlertException e) {
             LOGGER.warn("UnhandledAlertException, accept and retry", e);
-            WebDriverWait wait = new WebDriverWait(WebDriverConfig.getDriver(), 5);
+            WebDriverWait wait = new WebDriverWait(WebDriverConfig.getDriver(), 10);
             wait.until(ExpectedConditions.alertIsPresent());
             WebDriverConfig.getDriver().switchTo().alert().accept();
+            LOGGER.info("alert - accepted");
             payButton.click();
         }
     }

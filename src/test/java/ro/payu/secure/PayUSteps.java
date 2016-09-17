@@ -36,7 +36,7 @@ public class PayUSteps extends TestBase {
 
     @Then("^I enter PayU password$")
     public void enterPassword() throws Throwable {
-        cardView.switchToPopup();
+        //cardView.switchToPopup();
         BankCardDetails card = new BankCardDetails();
         secure3DPassword.setPassword(card.getPassword());
     }

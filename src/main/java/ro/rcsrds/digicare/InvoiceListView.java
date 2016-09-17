@@ -15,7 +15,7 @@ public class InvoiceListView extends WebLocator {
     private WebLink invoicesListItem = new WebLink().setText("Listă Facturi", SearchType.TRIM, SearchType.CHILD_NODE);
     private Button selectAllButton = new Button().setText("Selectaţi tot").setVisibility(true);
     private Button payAllButton = new Button().setText("Plătiţi factura", SearchType.STARTS_WITH);
-    private WebLink seeInvoices = new WebLink().setAttribute("data-request", "/invoices-list");
+    private WebLink seeInvoices = new WebLink().setAttribute("data-request", "/invoices-list").setVisibility(true);
 
     private WebLocator promoPopup = new WebLocator().setClasses("popup");
     private WebLocator closePromo = new WebLocator(promoPopup).setClasses("close").setRenderMillis(500);
@@ -41,7 +41,7 @@ public class InvoiceListView extends WebLocator {
         closePromo.doClick();
 
         if (seeInvoices.isElementPresent()) {
-            seeInvoices.click();
+            seeInvoices.doClick();
         }
 
         closePromo.doClick();
