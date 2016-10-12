@@ -5,7 +5,7 @@ import com.sdl.selenium.web.form.TextField;
 
 public class Secure3DPassword {
 
-    private TextField passwordField = new TextField().setName("PASSWORD");
+    private TextField passwordField = new TextField().setName("PASSWORD").setRenderMillis(10000);
     private WebLocator continueButton = new WebLocator().setTag("img").setAttribute("src", "images/Continua.jpg");
 
 
