@@ -30,16 +30,16 @@ public class PayUSteps extends TestBase {
 
     @Then("^I type \"([^\"]*)\" into PayU password$")
     public void enterPassword(String password) {
-        cardView.switchToPopup();
+        //cardView.switchToPopup();
         secure3DPassword.setPassword(password);
     }
 
-    @Then("^I enter PayU password$")
-    public void enterPassword() throws Throwable {
-        //cardView.switchToPopup();
-        BankCardDetails card = new BankCardDetails();
-        secure3DPassword.setPassword(card.getPassword());
-    }
+//    @Then("^I enter PayU password$")
+//    public void enterPassword() throws Throwable {
+//        //cardView.switchToPopup();
+//        BankCardDetails card = new BankCardDetails();
+//        secure3DPassword.setPassword(card.getPassword());
+//    }
 
     @Then("^I finalize payment on PayU site$")
     public void I_finalize_payment_on_PayU_site() {

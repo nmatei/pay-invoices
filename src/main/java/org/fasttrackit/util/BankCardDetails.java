@@ -9,6 +9,8 @@ import java.util.Locale;
 
 public class BankCardDetails extends PropertiesReader{
 
+    public static String LAST_AMOUNT = "";
+
     public BankCardDetails() {
         super("src\\test\\resources\\bank-card.properties");
     }

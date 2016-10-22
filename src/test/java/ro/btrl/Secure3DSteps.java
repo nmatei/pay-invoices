@@ -1,5 +1,9 @@
 package ro.btrl;
 
+import com.sdl.selenium.web.SearchType;
+import com.sdl.selenium.web.table.Cell;
+import com.sdl.selenium.web.table.Table;
+import com.sdl.selenium.web.utils.Utils;
 import cucumber.api.java.en.Then;
 import org.fasttrackit.util.BankCardDetails;
 import org.fasttrackit.util.TestBase;
@@ -20,6 +24,26 @@ public class Secure3DSteps extends TestBase {
     public void enterPassword() throws Throwable {
         BankCardDetails card = new BankCardDetails();
         secure3DPassword.setPassword(card.getPassword());
+
+        BankCardDetails.LAST_AMOUNT = getCurrentAmount();
+        LOGGER.info("Paid amount: {}", BankCardDetails.LAST_AMOUNT);
+    }
+
+    private String getCurrentAmount() {
+        Cell cell = new Table().getCell(2, new Cell(1, "Suma:", SearchType.DEEP_CHILD_NODE_OR_SELF));
+        cell.setResultIdx(2);
+        String text;
+        int retryCount = 0;
+        do {
+            cell.ready(10);
+            Utils.sleep(500);
+            text = cell.getText();
+            retryCount++;
+        } while ((text == null || "".equals(text)) && retryCount > 20);
+        if (text == null) {
+            text = "";
+        }
+        return text.split(" ")[0];
     }
 
     @Then("^I finalize payment on BT 3DSecure$")

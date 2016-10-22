@@ -19,6 +19,7 @@ Feature: As a Customer I pay all my invoices
 
 
   Scenario: Pay UPC invoice
+    Given I open url "https://my.upc.ro/"
     And I login on UPC using "user@gmail.com"/"******"
     When I click on link with text "Plăteşte acum"
     When I click on link with text "Plăteşte acum"
@@ -26,9 +27,9 @@ Feature: As a Customer I pay all my invoices
     And I click on element with text "Fă o plată simplă cu cardul"
     And I click on "Continuă" button
     And I switch browser to last tab
-    Then I enter my PayU card details
-    And I click on input button with text "Plateste"
-    And I enter PayU password
+    Then I enter my PayU v2 card details
+    And I click on "Plăteşte" button
+    And I enter BT 3DSecure password
     And I finalize payment on PayU site
     And I get a success notification from PayU
 
