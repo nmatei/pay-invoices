@@ -22,8 +22,11 @@ public class Secure3DSteps extends TestBase {
 
     @Then("^I enter BT 3DSecure password$")
     public void enterPassword() throws Throwable {
-        BankCardDetails card = new BankCardDetails();
-        secure3DPassword.setPassword(card.getPassword());
+//        BankCardDetails card = new BankCardDetails();
+//        secure3DPassword.setPassword(card.getPassword());
+
+        LOGGER.info("Waiting 30sec until you manually enter code received from SMS");
+        Utils.sleep(30000);
 
         BankCardDetails.LAST_AMOUNT = getCurrentAmount();
         LOGGER.info("Paid amount: {}", BankCardDetails.LAST_AMOUNT);

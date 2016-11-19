@@ -11,9 +11,9 @@ public class LoginView extends WebLocator {
         setTag("form");
     }
 
-    private TextField userNameField = new TextField(this).setLabel("Utilizator:", SearchType.TRIM);
-    private TextField passwordField = new TextField(this).setLabel("Parola:", SearchType.TRIM);
-    private InputButton loginButton = new InputButton(this, "Submit");
+    private TextField userNameField = new TextField(this).setLabel("Utilizator / Email", SearchType.TRIM);
+    private TextField passwordField = new TextField(this).setLabel("Parola", SearchType.TRIM);
+    private InputButton loginButton = new InputButton(this, "Acces");
 
     public void login(String user, String pass) {
         userNameField.setValue(user);
