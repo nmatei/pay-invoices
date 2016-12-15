@@ -34,7 +34,7 @@ public class Secure3DSteps extends TestBase {
 
     private String getCurrentAmount() {
         Cell cell = new Table().getCell(2, new Cell(1, "Suma:", SearchType.DEEP_CHILD_NODE_OR_SELF));
-        cell.setResultIdx(2);
+        cell.setResultIdx(1);
         String text;
         int retryCount = 0;
         do {
