@@ -13,7 +13,7 @@ import java.io.File;
 
 public class GlobalHooks {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalHooks.class);
-    
+
     @After("@screen")
     public void screen(Scenario scenario) {
         String scenarioName = scenario.getName(); // TODO class name
@@ -23,21 +23,19 @@ public class GlobalHooks {
             LOGGER.warn(scenarioName + " Scenario has failed! Embed the screenshot in the report!--- ");
             byte[] screenshot = ((TakesScreenshot) WebDriverConfig.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
+
+            takeScreenShot(scenarioName);
         }
     }
 
-    public void takeScreenShot(String screenShotName) {
-        // trim screenshot name because deleting files from jenkins cannot delete files that have a long name
+    private void takeScreenShot(String screenShotName) {
         if (screenShotName.length() > 80) {
             screenShotName = screenShotName.substring(0, 80);
         }
         screenShotName = screenShotName.replaceAll(" ", "_");
-        String resultPath, screenShotsResultsPath;
-        resultPath = new File("test-output").getAbsolutePath();
-        LOGGER.debug("resultPath: " + resultPath);
-        screenShotsResultsPath = new File(resultPath + File.separator + this.getClass().getSimpleName() + File.separator + screenShotName).getAbsolutePath();
-        screenShotName = Utils.getScreenShot(screenShotName, resultPath + "\\" + this.getClass().getSimpleName() + "\\");
-        LOGGER.info(screenShotsResultsPath);
+        String resultPath = new File("test-output").getAbsolutePath();
+        screenShotName = Utils.getScreenShot(screenShotName, resultPath + "\\screens\\");
+        LOGGER.info(screenShotName);
     }
 
 }
