@@ -12,7 +12,7 @@ import org.openqa.selenium.InvalidElementStateException;
 
 public class InvoiceListView extends WebLocator {
     private WebLocator invoiceMenuItem = new WebLocator().setText("Facturi");
-    private WebLink invoicesListItem = new WebLink().setText("Facturi servicii telecomunicații", SearchType.TRIM, SearchType.CHILD_NODE);
+    private WebLink invoicesListItem = new WebLink().setText("Facturi servicii", SearchType.TRIM, SearchType.CHILD_NODE);
     private Button selectAllButton = new Button().setText("Selectaţi tot").setVisibility(true);
     private Button payAllButton = new Button().setText("Plătiţi factura", SearchType.STARTS_WITH);
     private WebLink seeInvoices = new WebLink().setAttribute("data-request", "/invoices-list").setVisibility(true);
