@@ -19,7 +19,7 @@ public class CardView extends WebLocator {
     private TextField numberField = new TextField().setLabel("Numarul cardului", SearchType.TRIM).setLabelTag("div");
     private TextField ownerField = new TextField().setLabel("Numele scris pe card", SearchType.TRIM).setLabelTag("div");
     private ComboBox monthField = new ComboBox().setLabel("Data expirarii cardului", SearchType.TRIM).setLabelTag("div").setPosition(1);
-    private ComboBox yearField = new ComboBox().setLabel("Data expirarii cardului", SearchType.TRIM).setLabelTag("div").setPosition(2);
+    private ComboBox yearField = new ComboBox().setId("cardyear");
     private TextField cvv2Field = new TextField().setLabel("Codul CVV2/CVC2", SearchType.TRIM).setLabelTag("div");
 
     private InputButton payButton = new InputButton().setText("Efectueaza plata");
@@ -29,9 +29,9 @@ public class CardView extends WebLocator {
     public void setValues(String number, String cvv, String month, String year, String owner) {
         numberField.setValue(number);
         cvv2Field.setValue(cvv);
+        ownerField.setValue(owner);
         monthField.select(month);
         yearField.select(year);
-        ownerField.setValue(owner);
     }
 
     public void setValues(BankCardDetails card) {
