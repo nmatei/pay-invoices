@@ -51,6 +51,7 @@ public class BankCardDetails extends PropertiesReader{
     }
 
     public String getYear() {
+        // TODO at ro.secure11gw.SecureGwSteps.enterCardDetails(SecureGwSteps.java:22) need to use "17" instead of 2017
         return getProperty("card.expire.year");
     }
 
