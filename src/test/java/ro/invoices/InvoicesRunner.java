@@ -12,7 +12,8 @@ import org.junit.runner.RunWith;
                 "ro.payu.secure",
                 "ro.secure11gw",
                 "ro.rcsrds.digicare",
-                "ro.upc"
+                "ro.upc",
+                "ro.eon"
         },
         features = {
                 "src/test/resources/feature/invoice/all-invoices.feature"

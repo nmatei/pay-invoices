@@ -1,11 +1,9 @@
 @screen
 Feature: As a Customer I pay all my invoices
 
-  Scenario: Pay e-on invoice
+  Scenario: Pay E-ON invoice
     Given I open url "https://myline-eon.ro/"
-    And I type "user@gmail.com" into "Utilizator" field
-    And I type "******" into "Parolă" field
-    When I click on "Login" button
+    And I login on EON using "user@gmail.com"/"******"
     Then I should see an element with text "PRENUME NUME"
     When I click on "Facturile mele" button
     And I click on link with text "Facturi gaze naturale"
