@@ -47,7 +47,7 @@ Feature: As a Customer I pay all my invoices
     And I click on "Înapoi la site" button
 
   Scenario: Pay Electrica invoice
-    Given I open url "https://oficiulvirtual.electricafurnizare.ro/"
+    Given I open url "https://myelectrica.ro"
     And I login on Electrica using "user"/"******"
     And I open invoice list on Electrica for place "1010111 - CLUJ, CLUJ-NAPOCA, Str. Testelor, nr.1, Bl.B1, Sc.1, Et.2, Ap.3, 12345"
     When I select to pay all invoices on Electrica
