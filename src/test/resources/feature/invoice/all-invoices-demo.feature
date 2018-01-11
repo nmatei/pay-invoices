@@ -48,6 +48,7 @@ Feature: As a Customer I pay all my invoices
 
   Scenario: Pay Electrica invoice
     Given I open url "https://myelectrica.ro"
+    And I click on link with text "CONECTEAZĂ-TE"
     And I login on Electrica using "user"/"******"
     And I open invoice list on Electrica for place "1010111 - CLUJ, CLUJ-NAPOCA, Str. Testelor, nr.1, Bl.B1, Sc.1, Et.2, Ap.3, 12345"
     When I select to pay all invoices on Electrica
@@ -56,5 +57,4 @@ Feature: As a Customer I pay all my invoices
     And I enter BT 3DSecure password
     And I finalize payment on BT 3DSecure
     And I should see an element containing text "Plata online este in curs de procesare. Va multumim!"
-    And I click on link with text "OK"
     #And I click on link with text "Log-out"

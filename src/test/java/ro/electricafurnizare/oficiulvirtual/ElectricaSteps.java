@@ -15,7 +15,7 @@ public class ElectricaSteps extends TestBase {
     @Then("^I login on Electrica using \"([^\"]*)\"/\"([^\"]*)\"$")
     public void login(String user, String pass) {
         loginView.login(user, pass);
-        Utils.sleep(2);
+        Utils.sleep(200);
     }
 
     @When("^I open invoice list on Electrica for place \"([^\"]*)\"$")

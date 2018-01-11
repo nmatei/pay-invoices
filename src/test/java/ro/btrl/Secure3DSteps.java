@@ -25,6 +25,7 @@ public class Secure3DSteps extends TestBase {
 //        BankCardDetails card = new BankCardDetails();
 //        secure3DPassword.setPassword(card.getPassword());
 
+        // TODO wait until I enter all chars and until I don't change the value
         LOGGER.info("Waiting 30sec until you manually enter code received from SMS");
         Utils.sleep(30000);
 
