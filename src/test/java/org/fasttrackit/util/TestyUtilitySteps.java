@@ -33,6 +33,12 @@ public class TestyUtilitySteps extends TestBase {
         WebLocator element = new WebLocator().setText(text);
         element.click();
     }
+
+    @When("^I click on element with class \"([^\"]*)\"$")
+    public void I_click_on_element_with_class(String cls) throws Throwable {
+        WebLocator element = new WebLocator().setClasses(cls);
+        element.click();
+    }
     
     @When("^I click on input button with text \"([^\"]*)\"$")
     public void I_click_on_input_button_with_text(String text) {
